@@ -108,6 +108,16 @@ test('CLI refreshes tokens, preserves properties, paginates, and redacts snapsho
   };
 
   try {
+    const doctorResult = await runCli(['doctor'], environment);
+    assert.equal(doctorResult.code, 0, doctorResult.stderr);
+    const doctor = JSON.parse(doctorResult.stdout);
+    assert.equal(doctor.ready, false);
+    assert.deepEqual(doctor.blockers.map((blocker) => blocker.code), [
+      'oauth-client-not-ready',
+      'oauth-token-not-ready',
+    ]);
+    assert.equal(doctor.setupGuide, 'references/oauth-setup.md');
+
     await mkdir(configDirectory, { recursive: true });
     await writeFile(
       clientFile,

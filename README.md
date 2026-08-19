@@ -26,7 +26,7 @@ Unlike prompt-only SEO collections, these skills retrieve reproducible evidence 
 
 ## Install
 
-The repository is private during the `v0.1.0` hardening phase. Marketplace installation requires GitHub access until the repository is made public.
+Installation does not create provider credentials. On first use, the selected skill runs `doctor` and guides the user through creating their own provider credential when required. Never paste secrets into chat.
 
 ### Codex plugin
 

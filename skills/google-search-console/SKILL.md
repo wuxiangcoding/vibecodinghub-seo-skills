@@ -32,15 +32,16 @@ node "$SKILL_DIR/scripts/gsc.mjs" auth
 
 ## Workflow
 
-1. Run `node "$SKILL_DIR/scripts/gsc.mjs" doctor` before querying.
-2. If authorization is missing and the user asked to configure access, read [references/oauth-setup.md](references/oauth-setup.md), then run `node "$SKILL_DIR/scripts/gsc.mjs" auth`. Never create OAuth credentials for the user, reuse another person's client, or start an interactive authorization flow from unattended automation.
-3. Run `node "$SKILL_DIR/scripts/gsc.mjs" sites` and use the exact property identifier returned by the API, such as `sc-domain:example.com` or `https://www.example.com/`.
-4. Add a stable alias when useful: `node "$SKILL_DIR/scripts/gsc.mjs" alias --name example --site sc-domain:example.com`.
-5. For repeatable analysis, prefer a snapshot:
+1. Always run `node "$SKILL_DIR/scripts/gsc.mjs" doctor` before querying.
+2. If `ready` is false, do not run data commands. Read [references/oauth-setup.md](references/oauth-setup.md), explain each reported blocker, and guide the user through creating their own Desktop OAuth client. Never ask the user to paste a client secret, authorization code, or token into chat.
+3. Pause while the user completes the Google Cloud steps. After they confirm the client file is installed, run `node "$SKILL_DIR/scripts/gsc.mjs" auth` interactively, rerun `doctor`, and require `ready: true`. Never create credentials for the user, reuse another person's client, or start interactive authorization from unattended automation.
+4. Run `node "$SKILL_DIR/scripts/gsc.mjs" sites` and use the exact property identifier returned by the API, such as `sc-domain:example.com` or `https://www.example.com/`.
+5. Add a stable alias when useful: `node "$SKILL_DIR/scripts/gsc.mjs" alias --name example --site sc-domain:example.com`.
+6. For repeatable analysis, prefer a snapshot:
 
    `node "$SKILL_DIR/scripts/gsc.mjs" snapshot --site example --days 28`
 
-6. Read the emitted snapshot path and report its `source`, `fetchedAt`, property, period, data state, and row counts. Read [references/output-schema.md](references/output-schema.md) when interpreting or transforming snapshot data.
+7. Read the emitted snapshot path and report its `source`, `fetchedAt`, property, period, data state, and row counts. Read [references/output-schema.md](references/output-schema.md) when interpreting or transforming snapshot data.
 
 ## Commands
 

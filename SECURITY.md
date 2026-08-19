@@ -12,4 +12,4 @@ Revoke or rotate the affected provider credential first. Remove the data from Gi
 
 ## Supported versions
 
-Security fixes target the latest released minor version. The repository is in private `0.1.0` preparation and has no supported public release yet.
+Security fixes target the latest released minor version. Versions before `1.0.0` may introduce breaking changes between minor releases.

@@ -598,9 +598,33 @@ async function doctor() {
     tokenExpiresAt = token.expires_at ? new Date(Number(token.expires_at)).toISOString() : null;
     hasRefreshToken = Boolean(token.refresh_token);
   }
+  const ready = clientSafe && tokenSafe && clientType === 'installed' && trustedEndpoints && hasRefreshToken;
+  const blockers = [];
+  if (!clientSafe || clientType !== 'installed' || !trustedEndpoints) {
+    blockers.push({
+      code: 'oauth-client-not-ready',
+      message: 'Create and install a user-owned Google Desktop OAuth client.',
+    });
+  }
+  if (!tokenSafe || !hasRefreshToken) {
+    blockers.push({
+      code: 'oauth-token-not-ready',
+      message: 'Complete interactive OAuth authorization to create a renewable token.',
+    });
+  }
+  const nextActions = [];
+  if (!ready) nextActions.push('Read references/oauth-setup.md and complete the user-owned credential steps.');
+  if (warnings.length) nextActions.push('Resolve every warning before authorization or data access.');
+  if (blockers.some((blocker) => blocker.code === 'oauth-token-not-ready')) {
+    nextActions.push('Run auth interactively after the OAuth client is installed.');
+  }
+  if (!ready) nextActions.push('Run doctor again and require ready: true.');
   return {
-    ready: clientSafe && tokenSafe && clientType === 'installed' && trustedEndpoints && hasRefreshToken,
+    ready,
     warnings,
+    blockers,
+    nextActions,
+    setupGuide: 'references/oauth-setup.md',
     configDirectory: CONFIG_DIR,
     clientFile: { path: CLIENT_FILE, ...clientStatus, clientType, trustedEndpoints },
     tokenFile: { path: TOKEN_FILE, ...tokenStatus, hasRefreshToken, accessTokenExpiresAt: tokenExpiresAt },

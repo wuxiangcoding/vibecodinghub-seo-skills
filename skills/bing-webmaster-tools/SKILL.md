@@ -32,18 +32,19 @@ node "$SKILL_DIR/scripts/bing-webmaster.mjs" auth
 
 ## Workflow
 
-1. Run `node "$SKILL_DIR/scripts/bing-webmaster.mjs" doctor` before querying.
-2. If authorization is missing and the user asked to configure access, read [references/api-key-setup.md](references/api-key-setup.md), then run `node "$SKILL_DIR/scripts/bing-webmaster.mjs" auth` in an interactive terminal. For a pre-set environment secret, use `auth --from-env`. Never create an API key for the user, reuse another person's key, or start interactive authorization from unattended automation.
-3. Save the private site list outside repositories, then read it and preserve the exact site URL returned by Bing:
+1. Always run `node "$SKILL_DIR/scripts/bing-webmaster.mjs" doctor` before querying.
+2. If `ready` is false, do not run data commands. Read [references/api-key-setup.md](references/api-key-setup.md), explain each reported blocker, and guide the user through creating their own Bing Webmaster API key. Never ask the user to paste the key into chat or place it in a command line.
+3. Pause while the user completes the Bing Webmaster steps. After they confirm the key exists, run `node "$SKILL_DIR/scripts/bing-webmaster.mjs" auth` in an interactive terminal, rerun `doctor`, and require `ready: true`. For a pre-set environment secret, use `auth --from-env`. Never create a key for the user, reuse another person's key, or start interactive authorization from unattended automation.
+4. Save the private site list outside repositories, then read it and preserve the exact site URL returned by Bing:
 
    `node "$SKILL_DIR/scripts/bing-webmaster.mjs" sites --output ~/.local/share/codex-bing-webmaster/site-list.json`
-4. Add a stable alias when useful: `node "$SKILL_DIR/scripts/bing-webmaster.mjs" alias --name example --site https://example.com/`.
-5. For repeatable analysis, prefer a snapshot:
+5. Add a stable alias when useful: `node "$SKILL_DIR/scripts/bing-webmaster.mjs" alias --name example --site https://example.com/`.
+6. For repeatable analysis, prefer a snapshot:
 
    `node "$SKILL_DIR/scripts/bing-webmaster.mjs" snapshot --site example --days 28`
 
-6. Read the emitted snapshot path and report its `source`, `fetchedAt`, exact site, selected window, API coverage, freshness, and row counts. Read [references/output-schema.md](references/output-schema.md) before interpreting or transforming snapshot data.
-7. For intent-to-landing-page evidence, drill into only a few shortlisted candidates:
+7. Read the emitted snapshot path and report its `source`, `fetchedAt`, exact site, selected window, API coverage, freshness, and row counts. Read [references/output-schema.md](references/output-schema.md) before interpreting or transforming snapshot data.
+8. For intent-to-landing-page evidence, drill into only a few shortlisted candidates:
 
    `node "$SKILL_DIR/scripts/bing-webmaster.mjs" query --site example --dataset query-pages --query "example review"`
 

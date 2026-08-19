@@ -182,6 +182,9 @@ async function validateManifests() {
   for (const field of ['installation', 'authentication']) {
     if (!codexEntry?.policy?.[field]) fail(`Codex marketplace: policy.${field} is required`);
   }
+  if (codexEntry?.policy?.authentication !== 'ON_USE') {
+    fail('Codex marketplace: user-owned provider authentication must happen on first use');
+  }
   if (!codexEntry?.category) fail('Codex marketplace: category is required');
 }
 

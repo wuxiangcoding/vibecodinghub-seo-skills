@@ -718,9 +718,23 @@ async function doctor() {
     authType = credentials?.authType || null;
     validatedAt = credentials?.validatedAt || null;
   }
+  const ready = environmentReady || (credentialSafe && credentialReady);
+  const blockers = ready ? [] : [{
+    code: 'api-key-not-ready',
+    message: 'Create and install a user-owned Bing Webmaster API key.',
+  }];
+  const nextActions = [];
+  if (!ready) nextActions.push('Read references/api-key-setup.md and create a user-owned API key.');
+  if (warnings.length) nextActions.push('Resolve every warning before authorization or data access.');
+  if (!ready) {
+    nextActions.push('Run auth interactively, then run doctor again and require ready: true.');
+  }
   return {
-    ready: environmentReady || (credentialSafe && credentialReady),
+    ready,
     warnings,
+    blockers,
+    nextActions,
+    setupGuide: 'references/api-key-setup.md',
     authentication: {
       type: 'api-key',
       source: environmentReady ? 'environment' : credentialReady ? 'credentials-file' : null,

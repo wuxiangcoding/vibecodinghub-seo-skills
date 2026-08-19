@@ -33,9 +33,9 @@ node "$SKILL_DIR/scripts/yandex-webmaster.mjs" auth
 
 ## Workflow
 
-1. Run `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" doctor` before querying.
-2. If client configuration is missing and the user asked to configure access, import it from environment variables with `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" configure --from-env`, or from a protected JSON file with `--input`.
-3. If authorization is missing and the user asked to configure access, run `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" auth` in an interactive terminal. Never start the confirmation-code flow from an unattended automation.
+1. Always run `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" doctor` before querying.
+2. If `ready` is false, do not run data commands. Read [references/oauth-setup.md](references/oauth-setup.md), explain each reported blocker, and guide the user through creating their own Yandex OAuth application. Never ask the user to paste a client secret, confirmation code, or token into chat.
+3. Pause while the user completes the Yandex OAuth steps. After they confirm the application exists, import its protected client configuration with `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" configure --from-env` or `--input`, then run `auth` interactively. Rerun `doctor` and require `ready: true`. Never start the confirmation-code flow from unattended automation.
 4. Run `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" hosts` and preserve the exact `hostId` returned by the API.
 5. Add a stable alias when useful: `node "$SKILL_DIR/scripts/yandex-webmaster.mjs" alias --name example --host https:example.com:443`.
 6. For repeatable analysis, prefer a snapshot:

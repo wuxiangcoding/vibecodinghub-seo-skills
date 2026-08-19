@@ -164,6 +164,16 @@ test('CLI refreshes tokens, discovers exact hosts, paginates queries, and writes
     YANDEX_WEBMASTER_CONFIG_DIR: configDirectory,
     YANDEX_WEBMASTER_DATA_DIR: dataDirectory,
   };
+  const doctorResult = await runCli(['doctor'], sharedEnvironment);
+  assert.equal(doctorResult.code, 0, doctorResult.stderr);
+  const doctor = JSON.parse(doctorResult.stdout);
+  assert.equal(doctor.ready, false);
+  assert.deepEqual(doctor.blockers.map((blocker) => blocker.code), [
+    'oauth-client-not-ready',
+    'oauth-token-not-ready',
+  ]);
+  assert.equal(doctor.setupGuide, 'references/oauth-setup.md');
+
   const configured = await runCli(['configure', '--from-env'], {
     ...sharedEnvironment,
     YANDEX_CLIENT_ID: 'mock-client-id',
