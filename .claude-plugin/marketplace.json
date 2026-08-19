@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "wuxiangcoding-seo",
+  "description": "Privacy-first SEO skills from Vibe Coding Hub.",
+  "owner": {
+    "name": "WuxiangCoding",
+    "url": "https://github.com/wuxiangcoding"
+  },
+  "plugins": [
+    {
+      "name": "vibecodinghub-seo-skills",
+      "source": "./",
+      "description": "Analyze Google, Bing, and Yandex search performance with local read-only CLIs.",
+      "version": "0.1.0",
+      "author": {
+        "name": "WuxiangCoding"
+      },
+      "homepage": "https://vibecodinghub.org/seo-skills",
+      "repository": "https://github.com/wuxiangcoding/vibecodinghub-seo-skills",
+      "license": "Apache-2.0",
+      "category": "SEO"
+    }
+  ]
+}

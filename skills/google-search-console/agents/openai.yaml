@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google Search Console"
+  short_description: "Fetch and export Search Console performance data"
+  default_prompt: "Use $google-search-console to fetch the latest finalized performance data for a Search Console property."

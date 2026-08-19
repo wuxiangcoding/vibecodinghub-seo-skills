@@ -1,0 +1,30 @@
+{
+  "name": "vibecodinghub-seo-skills",
+  "version": "0.1.0",
+  "description": "Privacy-first search performance skills for Google, Bing, and Yandex.",
+  "author": {
+    "name": "WuxiangCoding",
+    "url": "https://github.com/wuxiangcoding"
+  },
+  "homepage": "https://vibecodinghub.org/seo-skills",
+  "repository": "https://github.com/wuxiangcoding/vibecodinghub-seo-skills",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Vibe Coding Hub SEO Skills",
+    "shortDescription": "Analyze first-party search performance data.",
+    "longDescription": "Read-only workflows and local CLIs for reproducible Google Search Console, Bing Webmaster Tools, and Yandex Webmaster analysis.",
+    "developerName": "WuxiangCoding",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://vibecodinghub.org/seo-skills",
+    "defaultPrompt": [
+      "Compare recent search performance across my verified properties.",
+      "Create a private 28-day SEO performance snapshot.",
+      "Find high-impression search opportunities from first-party data."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "vibecodinghub-seo-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Validation and tests for Vibe Coding Hub SEO Skills.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/validate-repository.mjs",
+    "test": "node --test skills/google-search-console/scripts/gsc.test.mjs skills/yandex-webmaster/scripts/yandex-webmaster.test.mjs && node skills/bing-webmaster-tools/scripts/bing-webmaster.mjs self-test"
+  }
+}

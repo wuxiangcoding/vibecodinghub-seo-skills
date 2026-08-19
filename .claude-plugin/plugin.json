@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "vibecodinghub-seo-skills",
+  "displayName": "Vibe Coding Hub SEO Skills",
+  "version": "0.1.0",
+  "description": "Privacy-first search performance skills for Google, Bing, and Yandex.",
+  "author": {
+    "name": "WuxiangCoding",
+    "url": "https://github.com/wuxiangcoding"
+  },
+  "homepage": "https://vibecodinghub.org/seo-skills",
+  "repository": "https://github.com/wuxiangcoding/vibecodinghub-seo-skills",
+  "license": "Apache-2.0"
+}

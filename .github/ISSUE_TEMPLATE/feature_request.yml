@@ -1,0 +1,29 @@
+name: Feature request
+description: Propose an improvement within the read-only SEO data scope.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe inputs, outputs, provider limitations, and privacy impact.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundaries
+      options:
+        - label: The proposal can remain read-only.
+          required: true
+        - label: The proposal does not require shared credentials or committed website data.
+          required: true

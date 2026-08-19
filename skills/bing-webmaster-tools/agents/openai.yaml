@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bing Webmaster Tools"
+  short_description: "Fetch and analyze Bing Webmaster performance data"
+  default_prompt: "Use $bing-webmaster-tools to fetch and analyze the latest Bing Webmaster data for a verified site."

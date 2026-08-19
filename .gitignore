@@ -1,0 +1,36 @@
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# OAuth credentials and tokens must never enter this repository
+**/oauth-client*.json
+**/client_secret*.json
+**/token.json
+
+# Bing Webmaster API keys and local credentials
+**/credentials.json
+**/codex-bing-webmaster/
+*.bing-webmaster-snapshot.json
+
+# Search Console aliases and raw performance data
+**/sites.json
+**/site-list.json
+**/snapshots/
+**/latest.json
+**/codex-gsc/
+*.gsc-snapshot.json
+
+# Yandex Webmaster aliases and raw performance data
+**/codex-yandex-webmaster/
+*.yandex-webmaster-snapshot.json
+
+# Temporary files
+*.tmp
+__pycache__/
+*.py[cod]
