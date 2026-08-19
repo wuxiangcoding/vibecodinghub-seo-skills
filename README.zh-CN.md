@@ -32,7 +32,7 @@
 
 ```bash
 codex plugin marketplace add wuxiangcoding/vibecodinghub-seo-skills --ref main
-codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
+codex plugin add vibecodinghub-seo-skills@wuxiangcoding
 ```
 
 安装后新建一个 Codex 任务，然后调用 `$google-search-console` 等 Skill。
@@ -43,7 +43,7 @@ codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
 
 ```text
 /plugin marketplace add wuxiangcoding/vibecodinghub-seo-skills
-/plugin install vibecodinghub-seo-skills@wuxiangcoding-seo
+/plugin install vibecodinghub-seo-skills@wuxiangcoding
 ```
 
 Claude Code 会为 Plugin Skills 添加命名空间。直接调用时可使用 `/vibecodinghub-seo-skills:google-search-console`。
@@ -138,12 +138,12 @@ node skills/yandex-webmaster/scripts/yandex-webmaster.mjs snapshot --host https:
 Codex：
 
 ```bash
-codex plugin marketplace upgrade wuxiangcoding-seo
-codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
-codex plugin remove vibecodinghub-seo-skills@wuxiangcoding-seo
+codex plugin marketplace upgrade wuxiangcoding
+codex plugin add vibecodinghub-seo-skills@wuxiangcoding
+codex plugin remove vibecodinghub-seo-skills@wuxiangcoding
 ```
 
-Claude Code 可使用 `/plugin marketplace update wuxiangcoding-seo`、`/plugin update vibecodinghub-seo-skills@wuxiangcoding-seo` 或 `/plugin uninstall vibecodinghub-seo-skills@wuxiangcoding-seo`。
+Claude Code 可使用 `/plugin marketplace update wuxiangcoding`、`/plugin update vibecodinghub-seo-skills@wuxiangcoding` 或 `/plugin uninstall vibecodinghub-seo-skills@wuxiangcoding`。
 
 移除 Plugin 不会删除用户自行管理的配置目录和数据目录中的凭据或快照。
 

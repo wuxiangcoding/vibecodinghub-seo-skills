@@ -1,7 +1,7 @@
 {
-  "name": "wuxiangcoding-seo",
+  "name": "wuxiangcoding",
   "interface": {
-    "displayName": "WuxiangCoding SEO"
+    "displayName": "WuxiangCoding"
   },
   "plugins": [
     {

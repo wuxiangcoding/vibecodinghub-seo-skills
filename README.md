@@ -32,7 +32,7 @@ The repository is private during the `v0.1.0` hardening phase. Marketplace insta
 
 ```bash
 codex plugin marketplace add wuxiangcoding/vibecodinghub-seo-skills --ref main
-codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
+codex plugin add vibecodinghub-seo-skills@wuxiangcoding
 ```
 
 Start a new Codex task after installation, then invoke a skill such as `$google-search-console`.
@@ -43,7 +43,7 @@ Run these commands inside Claude Code:
 
 ```text
 /plugin marketplace add wuxiangcoding/vibecodinghub-seo-skills
-/plugin install vibecodinghub-seo-skills@wuxiangcoding-seo
+/plugin install vibecodinghub-seo-skills@wuxiangcoding
 ```
 
 Claude Code namespaces plugin skills. For example, use `/vibecodinghub-seo-skills:google-search-console` when invoking the skill directly.
@@ -138,12 +138,12 @@ See [SECURITY.md](SECURITY.md) for private vulnerability reporting.
 For Codex:
 
 ```bash
-codex plugin marketplace upgrade wuxiangcoding-seo
-codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
-codex plugin remove vibecodinghub-seo-skills@wuxiangcoding-seo
+codex plugin marketplace upgrade wuxiangcoding
+codex plugin add vibecodinghub-seo-skills@wuxiangcoding
+codex plugin remove vibecodinghub-seo-skills@wuxiangcoding
 ```
 
-For Claude Code, use `/plugin marketplace update wuxiangcoding-seo`, `/plugin update vibecodinghub-seo-skills@wuxiangcoding-seo`, or `/plugin uninstall vibecodinghub-seo-skills@wuxiangcoding-seo`.
+For Claude Code, use `/plugin marketplace update wuxiangcoding`, `/plugin update vibecodinghub-seo-skills@wuxiangcoding`, or `/plugin uninstall vibecodinghub-seo-skills@wuxiangcoding`.
 
 Removing the plugin does not delete credentials or snapshots from the user-controlled config and data directories.
 

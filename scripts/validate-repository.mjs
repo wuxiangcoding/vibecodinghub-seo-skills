@@ -166,14 +166,14 @@ async function validateManifests() {
   if (!Array.isArray(codex.interface?.defaultPrompt) || codex.interface.defaultPrompt.length > 3) {
     fail('Codex manifest: interface.defaultPrompt must be an array of at most three prompts');
   }
-  if (claudeMarketplace.name !== 'wuxiangcoding-seo') {
+  if (claudeMarketplace.name !== 'wuxiangcoding') {
     fail('Claude marketplace: unexpected marketplace name');
   }
   if (claudeMarketplace.plugins?.[0]?.source !== './') {
     fail('Claude marketplace: root plugin source must be ./');
   }
   const codexEntry = codexMarketplace.plugins?.[0];
-  if (codexMarketplace.name !== 'wuxiangcoding-seo') {
+  if (codexMarketplace.name !== 'wuxiangcoding') {
     fail('Codex marketplace: unexpected marketplace name');
   }
   if (codexEntry?.name !== expectedName || codexEntry?.source?.path !== './') {

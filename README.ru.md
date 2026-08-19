@@ -32,7 +32,7 @@
 
 ```bash
 codex plugin marketplace add wuxiangcoding/vibecodinghub-seo-skills --ref main
-codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
+codex plugin add vibecodinghub-seo-skills@wuxiangcoding
 ```
 
 После установки создайте новую задачу Codex и вызовите Skill, например `$google-search-console`.
@@ -43,7 +43,7 @@ codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
 
 ```text
 /plugin marketplace add wuxiangcoding/vibecodinghub-seo-skills
-/plugin install vibecodinghub-seo-skills@wuxiangcoding-seo
+/plugin install vibecodinghub-seo-skills@wuxiangcoding
 ```
 
 Claude Code добавляет пространство имён к Plugin Skills. Для прямого вызова используйте, например, `/vibecodinghub-seo-skills:google-search-console`.
@@ -138,12 +138,12 @@ node skills/yandex-webmaster/scripts/yandex-webmaster.mjs snapshot --host https:
 Для Codex:
 
 ```bash
-codex plugin marketplace upgrade wuxiangcoding-seo
-codex plugin add vibecodinghub-seo-skills@wuxiangcoding-seo
-codex plugin remove vibecodinghub-seo-skills@wuxiangcoding-seo
+codex plugin marketplace upgrade wuxiangcoding
+codex plugin add vibecodinghub-seo-skills@wuxiangcoding
+codex plugin remove vibecodinghub-seo-skills@wuxiangcoding
 ```
 
-Для Claude Code используйте `/plugin marketplace update wuxiangcoding-seo`, `/plugin update vibecodinghub-seo-skills@wuxiangcoding-seo` или `/plugin uninstall vibecodinghub-seo-skills@wuxiangcoding-seo`.
+Для Claude Code используйте `/plugin marketplace update wuxiangcoding`, `/plugin update vibecodinghub-seo-skills@wuxiangcoding` или `/plugin uninstall vibecodinghub-seo-skills@wuxiangcoding`.
 
 Удаление Plugin не удаляет учётные данные или снимки из каталогов конфигурации и данных, которыми управляет пользователь.
 
