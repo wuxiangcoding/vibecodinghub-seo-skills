@@ -1,6 +1,6 @@
 # Vibe Coding Hub SEO Skills
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [Русский](README.ru.md)
 
 Website: [vibecodinghub.org](https://vibecodinghub.org)
 
