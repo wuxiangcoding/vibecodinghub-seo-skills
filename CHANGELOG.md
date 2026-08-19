@@ -10,5 +10,6 @@ All notable changes to this project will be documented in this file. The format 
 - Codex and Claude Code plugin manifests and marketplace catalogs.
 - Dependency-free local CLIs, mock-backed tests, repository validation, and CI.
 - Public installation, privacy, security, and contribution documentation.
+- Simplified Chinese and Russian README translations.
 
 [Unreleased]: https://github.com/wuxiangcoding/vibecodinghub-seo-skills/commits/main

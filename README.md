@@ -1,5 +1,9 @@
 # Vibe Coding Hub SEO Skills
 
+[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md)
+
+Website: [vibecodinghub.org](https://vibecodinghub.org)
+
 Privacy-first, read-only agent skills for analyzing first-party search performance across Google, Bing, and Yandex.
 
 The repository combines reusable Agent Skills with dependency-free local Node.js CLIs. Credentials and raw website data stay on the user's machine; the repository ships no shared OAuth client, API key, token, property identifier, or snapshot.

@@ -6,7 +6,7 @@
     "name": "WuxiangCoding",
     "url": "https://github.com/wuxiangcoding"
   },
-  "homepage": "https://vibecodinghub.org/seo-skills",
+  "homepage": "https://vibecodinghub.org",
   "repository": "https://github.com/wuxiangcoding/vibecodinghub-seo-skills",
   "license": "Apache-2.0",
   "skills": "./skills/",
@@ -19,7 +19,7 @@
     "capabilities": [
       "Read"
     ],
-    "websiteURL": "https://vibecodinghub.org/seo-skills",
+    "websiteURL": "https://vibecodinghub.org",
     "defaultPrompt": [
       "Compare recent search performance across my verified properties.",
       "Create a private 28-day SEO performance snapshot.",
