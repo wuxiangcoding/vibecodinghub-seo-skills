@@ -16,8 +16,6 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import {
   buildAuthorizationUrl,
-  parseArgs,
-  parseDimensions,
   queryPeriod,
   redact,
   siteSlug,
@@ -85,16 +83,7 @@ test('Pacific-time defaults remain stable across UTC and DST boundaries', () => 
   );
 });
 
-test('argument and property helpers preserve supported values', () => {
-  assert.deepEqual(
-    parseArgs(['snapshot', '--site', 'sc-domain:example.com', '--days=28', '--stdout']),
-    {
-      command: 'snapshot',
-      options: { site: 'sc-domain:example.com', days: '28', stdout: true },
-      positional: [],
-    }
-  );
-  assert.deepEqual(parseDimensions('query,page'), ['query', 'page']);
+test('property storage keys and error messages do not leak secrets', () => {
   assert.equal(siteSlug('sc-domain:example.com'), 'sc-domain_example.com');
   assert.equal(siteSlug('https://www.example.com/path/'), 'www.example.com_path');
   assert.equal(

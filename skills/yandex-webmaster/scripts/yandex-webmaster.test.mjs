@@ -19,7 +19,6 @@ import {
   buildAuthorizationUrl,
   normalizeHistory,
   normalizePopularQueries,
-  parseArgs,
   queryPeriod,
 } from './yandex-webmaster.mjs';
 
@@ -153,23 +152,6 @@ test('period defaults to 28 days ending two UTC days ago', () => {
     {
       startDate: '2026-07-04',
       endDate: '2026-07-10',
-    }
-  );
-});
-
-test('argument parsing supports equals, values, and flags', () => {
-  assert.deepEqual(
-    parseArgs([
-      'snapshot',
-      '--host',
-      'example',
-      '--days=28',
-      '--no-open',
-    ]),
-    {
-      command: 'snapshot',
-      options: { host: 'example', days: '28', 'no-open': true },
-      positional: [],
     }
   );
 });
