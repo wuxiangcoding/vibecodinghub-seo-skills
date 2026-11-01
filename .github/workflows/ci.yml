@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Scan for verified or unknown secrets
-        uses: trufflesecurity/trufflehog@74dcf3f1bdeb0f6ad28061e49bcd29f297634a67
+        uses: trufflesecurity/trufflehog@421026a6540c63cf143ef53a5859389d473e88da
         with:
           extra_args: --results=verified,unknown --fail-on-scan-errors
 
